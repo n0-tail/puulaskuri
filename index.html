@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree CO2 Offset Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-box">
+            <h1>🌳 Tree Impact Calculator</h1>
+            <p class="subtitle">See how many trees offset your daily activities!</p>
+            
+            <div class="input-section">
+                <label for="treeCount">Number of Trees:</label>
+                <div class="number-input">
+                    <button class="decrease" onclick="changeTrees(-1)">−</button>
+                    <input type="number" id="treeCount" value="1" min="0" max="1000" onchange="updateComparison()">
+                    <button class="increase" onclick="changeTrees(1)">+</button>
+                </div>
+            </div>
+
+            <div class="comparison-section">
+                <div id="comparisonText" class="comparison-text">
+                    <p>🌱 <strong>1 tree</strong> absorbs about <strong>22 kg of CO2</strong> per year</p>
+                    <p>That's like <strong>driving 88 km</strong> in a car!</p>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <div class="fact-card" id="fact1">
+                    <span class="emoji">🚗</span>
+                    <span class="fact-text">Driving</span>
+                </div>
+                <div class="fact-card" id="fact2">
+                    <span class="emoji">✈️</span>
+                    <span class="fact-text">Flying</span>
+                </div>
+                <div class="fact-card" id="fact3">
+                    <span class="emoji">🏠</span>
+                    <span class="fact-text">Home Energy</span>
+                </div>
+                <div class="fact-card" id="fact4">
+                    <span class="emoji">🍔</span>
+                    <span class="fact-text">Food</span>
+                </div>
+            </div>
+
+            <div class="achievement-section">
+                <div id="achievement" class="achievement hidden">
+                    <span class="achievement-emoji">🎉</span>
+                    <span class="achievement-text">New milestone reached!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
