@@ -25,7 +25,7 @@ const CO2_DATA = {
     subway: 0.05, // kg CO2 per km
     bicycle: 0, // kg CO2 per km
     walking: 0, // kg CO2 per km
-    treeAbsorption: 22 // kg CO2 per tree per year
+    treeAbsorption: 660 // kg CO2 per tree over 30 years (22 kg × 30 years)
 };
 
 // Engaging comparison scenarios
@@ -117,16 +117,16 @@ function updateComparison() {
     if (treeCount === 0) {
         comparisonText = `
             <p>🌱 Start planting trees to see your impact!</p>
-            <p>Each tree absorbs about <strong>22 kg of CO2</strong> per year</p>
+            <p>Each tree absorbs about <strong>660 kg of CO2</strong> over 30 years</p>
         `;
     } else if (treeCount === 1) {
         comparisonText = `
-            <p>🌱 <strong>1 tree</strong> absorbs about <strong>22 kg of CO2</strong> per year</p>
-            <p>That's like <strong>driving 9.6 km</strong> in a car!</p>
+            <p>🌱 <strong>1 tree</strong> absorbs about <strong>660 kg of CO2</strong> over 30 years</p>
+            <p>That's like <strong>driving 288 km</strong> in a car!</p>
         `;
     } else {
         comparisonText = `
-            <p>🌳 <strong>${treeCount} trees</strong> absorb about <strong>${totalCO2} kg of CO2</strong> per year</p>
+            <p>🌳 <strong>${treeCount} trees</strong> absorb about <strong>${totalCO2} kg of CO2</strong> over 30 years</p>
             <p>That's like <strong>${randomScenario.emoji} ${equivalentAmount} ${randomScenario.unit}</strong> of ${randomScenario.name.toLowerCase()}!</p>
         `;
     }
@@ -192,7 +192,7 @@ function showDetailedComparison(card) {
         
         // Update the main comparison text
         const comparisonText = `
-            <p>🌳 <strong>${treeCount} trees</strong> absorb about <strong>${totalCO2} kg of CO2</strong> per year</p>
+            <p>🌳 <strong>${treeCount} trees</strong> absorb about <strong>${totalCO2} kg of CO2</strong> over 30 years</p>
             <p>That's like <strong>${randomScenario.emoji} ${equivalentAmount} ${randomScenario.unit}</strong> of ${randomScenario.name.toLowerCase()}!</p>
         `;
         
