@@ -1,4 +1,4 @@
-// CO2 data and comparisons (based on real environmental data)
+// CO2 data and concrete examples (based on real environmental data)
 const CO2_DATA = {
     // CO2 emissions per activity (kg per year)
     driving: 2.3, // kg CO2 per km
@@ -25,64 +25,222 @@ const CO2_DATA = {
     subway: 0.05, // kg CO2 per km
     bicycle: 0, // kg CO2 per km
     walking: 0, // kg CO2 per km
-    treeAbsorption: 660 // kg CO2 per tree over 30 years (22 kg × 30 years)
+    treeAbsorption: 22 // kg CO2 per tree per year
 };
 
-// Engaging comparison scenarios
-const COMPARISONS = [
+// Concrete, engaging examples that scale with tree count
+const CONCRETE_EXAMPLES = [
+    // 1 Tree Examples
     {
-        category: "Transportation",
-        scenarios: [
-            { name: "🚗 Driving", unit: "km", factor: CO2_DATA.driving, emoji: "🚗" },
-            { name: "✈️ Flying", unit: "km", factor: CO2_DATA.flying, emoji: "✈️" },
-            { name: "🚌 Bus Ride", unit: "km", factor: CO2_DATA.bus, emoji: "🚌" },
-            { name: "🚆 Train Journey", unit: "km", factor: CO2_DATA.train, emoji: "🚆" },
-            { name: "🚇 Subway Trip", unit: "km", factor: CO2_DATA.subway, emoji: "🚇" }
+        trees: 1,
+        examples: [
+            {
+                category: "Transportation",
+                text: "🌱 <strong>1 tree</strong> offsets a <strong>flight from London to Paris</strong> (344 km)",
+                emoji: "✈️",
+                detail: "That's like taking the Eurostar instead of flying!"
+            },
+            {
+                category: "Food & Drinks",
+                text: "🌱 <strong>1 tree</strong> offsets <strong>9 hamburgers</strong> per year",
+                emoji: "🍔",
+                detail: "Almost a month of weekend BBQs!"
+            },
+            {
+                category: "Home Life",
+                text: "🌱 <strong>1 tree</strong> powers your <strong>smartphone for 4 months</strong>",
+                emoji: "📱",
+                detail: "All those selfies and social media posts!"
+            },
+            {
+                category: "Travel",
+                text: "🌱 <strong>1 tree</strong> offsets a <strong>road trip to the beach</strong> (88 km)",
+                emoji: "🚗",
+                detail: "Your weekend getaway is now carbon-neutral!"
+            }
         ]
     },
+    // 2 Trees Examples
     {
-        category: "Food & Drinks",
-        scenarios: [
-            { name: "🍔 Hamburgers", unit: "burgers", factor: CO2_DATA.hamburger, emoji: "🍔" },
-            { name: "🍕 Pizza Slices", unit: "slices", factor: CO2_DATA.pizza, emoji: "🍕" },
-            { name: "🥩 Beef Steaks", unit: "kg", factor: CO2_DATA.beef, emoji: "🥩" },
-            { name: "🍗 Chicken Meals", unit: "kg", factor: CO2_DATA.chicken, emoji: "🍗" },
-            { name: "☕ Coffee Cups", unit: "cups", factor: CO2_DATA.coffee, emoji: "☕" },
-            { name: "🍺 Beer Bottles", unit: "bottles", factor: CO2_DATA.beer, emoji: "🍺" },
-            { name: "🍷 Wine Glasses", unit: "bottles", factor: CO2_DATA.wine, emoji: "🍷" }
+        trees: 2,
+        examples: [
+            {
+                category: "Transportation",
+                text: "🌿 <strong>2 trees</strong> offset <strong>your daily commute for 2 months</strong> (40 km round trip)",
+                emoji: "🚗",
+                detail: "That's 40 work days of guilt-free driving!"
+            },
+            {
+                category: "Food & Drinks",
+                text: "🌿 <strong>2 trees</strong> offset <strong>55 cups of coffee</strong> per year",
+                emoji: "☕",
+                detail: "Your daily caffeine fix for almost 2 months!"
+            },
+            {
+                category: "Home Life",
+                text: "🌿 <strong>2 trees</strong> power your <strong>Netflix binge for 110 hours</strong>",
+                emoji: "📺",
+                detail: "That's like watching 3 entire seasons of your favorite show!"
+            },
+            {
+                category: "Travel",
+                text: "🌿 <strong>2 trees</strong> offset a <strong>weekend camping trip</strong> (176 km)",
+                emoji: "🏕️",
+                detail: "Your nature escape is now nature-friendly!"
+            }
         ]
     },
+    // 3 Trees Examples
     {
-        category: "Home & Lifestyle",
-        scenarios: [
-            { name: "💡 Light Bulbs", unit: "hours", factor: CO2_DATA.electricity, emoji: "💡" },
-            { name: "🚿 Hot Showers", unit: "10-min showers", factor: CO2_DATA.shower, emoji: "🚿" },
-            { name: "👕 Laundry Loads", unit: "loads", factor: CO2_DATA.laundry, emoji: "👕" },
-            { name: "🍽️ Dishwasher Runs", unit: "loads", factor: CO2_DATA.dishwasher, emoji: "🍽️" },
-            { name: "❄️ AC Hours", unit: "hours", factor: CO2_DATA.airConditioning, emoji: "❄️" },
-            { name: "🔥 Heating Hours", unit: "hours", factor: CO2_DATA.heating, emoji: "🔥" },
-            { name: "📱 Smartphone Usage", unit: "years", factor: CO2_DATA.smartphone, emoji: "📱" },
-            { name: "💻 Laptop Usage", unit: "years", factor: CO2_DATA.laptop, emoji: "💻" },
-            { name: "📺 Netflix Hours", unit: "hours", factor: CO2_DATA.streaming, emoji: "📺" }
+        trees: 3,
+        examples: [
+            {
+                category: "Transportation",
+                text: "🌳 <strong>3 trees</strong> offset <strong>your Uber rides for 3 months</strong>",
+                emoji: "🚕",
+                detail: "All those late-night rides home are covered!"
+            },
+            {
+                category: "Food & Drinks",
+                text: "🌳 <strong>3 trees</strong> offset <strong>26 pizza slices</strong> per year",
+                emoji: "🍕",
+                detail: "That's like 6 months of Friday night pizza!"
+            },
+            {
+                category: "Home Life",
+                text: "🌳 <strong>3 trees</strong> power your <strong>gaming sessions for 165 hours</strong>",
+                emoji: "🎮",
+                detail: "Your virtual adventures are now eco-friendly!"
+            },
+            {
+                category: "Travel",
+                text: "🌳 <strong>3 trees</strong> offset a <strong>flight from NYC to Boston</strong>",
+                emoji: "✈️",
+                detail: "Your business trip is carbon-neutral!"
+            }
+        ]
+    },
+    // 5 Trees Examples
+    {
+        trees: 5,
+        examples: [
+            {
+                category: "Transportation",
+                text: "🌲 <strong>5 trees</strong> offset <strong>your car for 3 months</strong> (15,000 km/year)",
+                emoji: "🚗",
+                detail: "A whole quarter of guilt-free driving!"
+            },
+            {
+                category: "Food & Drinks",
+                text: "🌲 <strong>5 trees</strong> offset <strong>44 beers</strong> per year",
+                emoji: "🍺",
+                detail: "That's like a month of weekend pub visits!"
+            },
+            {
+                category: "Home Life",
+                text: "🌲 <strong>5 trees</strong> power your <strong>entire home office for 2 months</strong>",
+                emoji: "💻",
+                detail: "Your remote work setup is now sustainable!"
+            },
+            {
+                category: "Travel",
+                text: "🌲 <strong>5 trees</strong> offset a <strong>European city break</strong> (440 km flight)",
+                emoji: "✈️",
+                detail: "Your romantic getaway is planet-friendly!"
+            }
+        ]
+    },
+    // 10 Trees Examples
+    {
+        trees: 10,
+        examples: [
+            {
+                category: "Transportation",
+                text: "🌳 <strong>10 trees</strong> offset <strong>your family's road trip</strong> (880 km)",
+                emoji: "🚗",
+                detail: "That epic summer vacation is now carbon-neutral!"
+            },
+            {
+                category: "Food & Drinks",
+                text: "🌳 <strong>10 trees</strong> offset <strong>your restaurant meals for 6 months</strong>",
+                emoji: "🍽️",
+                detail: "All those date nights and celebrations!"
+            },
+            {
+                category: "Home Life",
+                text: "🌳 <strong>10 trees</strong> power your <strong>entire household for 1 month</strong>",
+                emoji: "🏠",
+                detail: "Your home is now a green energy haven!"
+            },
+            {
+                category: "Travel",
+                text: "🌳 <strong>10 trees</strong> offset a <strong>transatlantic flight</strong> (880 km)",
+                emoji: "✈️",
+                detail: "Your international adventure is sustainable!"
+            }
+        ]
+    },
+    // 25 Trees Examples
+    {
+        trees: 25,
+        examples: [
+            {
+                category: "Transportation",
+                text: "🌲 <strong>25 trees</strong> offset <strong>your entire year of driving</strong>",
+                emoji: "🚗",
+                detail: "Your car is now carbon-neutral for the whole year!"
+            },
+            {
+                category: "Food & Drinks",
+                text: "🌲 <strong>25 trees</strong> offset <strong>your family's food for 6 months</strong>",
+                emoji: "🍽️",
+                detail: "All your groceries are now climate-friendly!"
+            },
+            {
+                category: "Home Life",
+                text: "🌲 <strong>25 trees</strong> power your <strong>entire home for 3 months</strong>",
+                emoji: "🏠",
+                detail: "Your household is now a sustainability champion!"
+            },
+            {
+                category: "Travel",
+                text: "🌲 <strong>25 trees</strong> offset <strong>your annual vacation flights</strong>",
+                emoji: "✈️",
+                detail: "All your travel dreams are now eco-friendly!"
+            }
+        ]
+    },
+    // 50+ Trees Examples
+    {
+        trees: 50,
+        examples: [
+            {
+                category: "Transportation",
+                text: "🌍 <strong>50 trees</strong> offset <strong>an entire family's transportation for a year</strong>",
+                emoji: "🚗",
+                detail: "Your whole family is now carbon-neutral!"
+            },
+            {
+                category: "Food & Drinks",
+                text: "🌍 <strong>50 trees</strong> offset <strong>a year of gourmet dining</strong>",
+                emoji: "🍽️",
+                detail: "All your fancy restaurant visits are covered!"
+            },
+            {
+                category: "Home Life",
+                text: "🌍 <strong>50 trees</strong> power <strong>multiple homes for 6 months</strong>",
+                emoji: "🏠",
+                detail: "You're now a neighborhood sustainability leader!"
+            },
+            {
+                category: "Travel",
+                text: "🌍 <strong>50 trees</strong> offset <strong>multiple international trips</strong>",
+                emoji: "✈️",
+                detail: "Your wanderlust is now planet-friendly!"
+            }
         ]
     }
 ];
-
-// Achievement milestones
-const ACHIEVEMENTS = [
-    { trees: 1, text: "🌱 First Tree! You're making a difference!", emoji: "🌱" },
-    { trees: 5, text: "🌿 Small Grove! You could offset a weekend trip!", emoji: "🌿" },
-    { trees: 10, text: "🌳 Growing Forest! That's like planting a mini park!", emoji: "🌳" },
-    { trees: 25, text: "🏞️ Forest Guardian! You're offsetting a month of driving!", emoji: "🏞️" },
-    { trees: 50, text: "🌲 Tree Master! You could power a small village!", emoji: "🌲" },
-    { trees: 100, text: "🌍 Climate Hero! You're saving the planet one tree at a time!", emoji: "🌍" },
-    { trees: 250, text: "🏆 Carbon Champion! You're offsetting a year of energy use!", emoji: "🏆" },
-    { trees: 500, text: "👑 Tree Legend! You're creating a carbon sink!", emoji: "👑" },
-    { trees: 1000, text: "🌟 Ultimate Eco Warrior! You're a climate change superhero!", emoji: "🌟" }
-];
-
-let currentAchievement = 0;
-let lastTreeCount = 0;
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -94,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function changeTrees(delta) {
     const input = document.getElementById('treeCount');
-    const newValue = Math.max(0, Math.min(1000, parseInt(input.value) + delta));
+    const newValue = Math.max(1, Math.min(100, parseInt(input.value) + delta));
     input.value = newValue;
     updateComparison();
     
@@ -103,38 +261,33 @@ function changeTrees(delta) {
 }
 
 function updateComparison() {
-    const treeCount = parseInt(document.getElementById('treeCount').value) || 0;
+    const treeCount = parseInt(document.getElementById('treeCount').value) || 1;
     const totalCO2 = treeCount * CO2_DATA.treeAbsorption;
     
-    // Get a random engaging comparison
-    const randomCategory = COMPARISONS[Math.floor(Math.random() * COMPARISONS.length)];
-    const randomScenario = randomCategory.scenarios[Math.floor(Math.random() * randomCategory.scenarios.length)];
+    // Find the best matching example for this tree count
+    let selectedExample = null;
     
-    const equivalentAmount = Math.round(totalCO2 / randomScenario.factor);
-    
-    let comparisonText = '';
-    
-    if (treeCount === 0) {
-        comparisonText = `
-            <p>🌱 Start planting trees to see your impact!</p>
-            <p>Each tree absorbs about <strong>660 kg of CO2</strong> over 30 years</p>
-        `;
-    } else if (treeCount === 1) {
-        comparisonText = `
-            <p>🌱 <strong>1 tree</strong> absorbs about <strong>660 kg of CO2</strong> over 30 years</p>
-            <p>That's like <strong>driving 288 km</strong> in a car!</p>
-        `;
+    // Find exact match first
+    let exactMatch = CONCRETE_EXAMPLES.find(example => example.trees === treeCount);
+    if (exactMatch) {
+        selectedExample = exactMatch.examples[Math.floor(Math.random() * exactMatch.examples.length)];
     } else {
-        comparisonText = `
-            <p>🌳 <strong>${treeCount} trees</strong> absorb about <strong>${totalCO2} kg of CO2</strong> over 30 years</p>
-            <p>That's like <strong>${randomScenario.emoji} ${equivalentAmount} ${randomScenario.unit}</strong> of ${randomScenario.name.toLowerCase()}!</p>
-        `;
+        // Find closest match
+        let closest = CONCRETE_EXAMPLES[0];
+        for (let example of CONCRETE_EXAMPLES) {
+            if (Math.abs(example.trees - treeCount) < Math.abs(closest.trees - treeCount)) {
+                closest = example;
+            }
+        }
+        selectedExample = closest.examples[Math.floor(Math.random() * closest.examples.length)];
     }
     
-    document.getElementById('comparisonText').innerHTML = comparisonText;
+    let comparisonText = `
+        <p>${selectedExample.text}</p>
+        <p><em>${selectedExample.detail}</em></p>
+    `;
     
-    // Check for achievements
-    checkAchievements(treeCount);
+    document.getElementById('comparisonText').innerHTML = comparisonText;
     
     // Update fact cards with current tree count
     updateFactCards(treeCount, totalCO2);
@@ -180,51 +333,48 @@ function setupFactCards() {
 
 function showDetailedComparison(card) {
     const cardIndex = Array.from(card.parentNode.children).indexOf(card);
-    const categories = ['Transportation', 'Transportation', 'Home & Lifestyle', 'Food & Drinks'];
+    const categories = ['Transportation', 'Travel', 'Home Life', 'Food & Drinks'];
     const category = categories[cardIndex];
     
-    const categoryData = COMPARISONS.find(c => c.category === category);
-    if (categoryData) {
-        const randomScenario = categoryData.scenarios[Math.floor(Math.random() * categoryData.scenarios.length)];
-        const treeCount = parseInt(document.getElementById('treeCount').value) || 0;
-        const totalCO2 = treeCount * CO2_DATA.treeAbsorption;
-        const equivalentAmount = Math.round(totalCO2 / randomScenario.factor);
-        
+    const treeCount = parseInt(document.getElementById('treeCount').value) || 1;
+    
+    // Find examples for this category and tree count
+    let selectedExample = null;
+    
+    // Find exact match first
+    let exactMatch = CONCRETE_EXAMPLES.find(example => example.trees === treeCount);
+    if (exactMatch) {
+        selectedExample = exactMatch.examples.find(example => example.category === category);
+    }
+    
+    // If no exact match, find closest
+    if (!selectedExample) {
+        let closest = CONCRETE_EXAMPLES[0];
+        for (let example of CONCRETE_EXAMPLES) {
+            if (Math.abs(example.trees - treeCount) < Math.abs(closest.trees - treeCount)) {
+                closest = example;
+            }
+        }
+        selectedExample = closest.examples.find(example => example.category === category);
+    }
+    
+    // If still no match, use first example of that category
+    if (!selectedExample) {
+        for (let exampleSet of CONCRETE_EXAMPLES) {
+            selectedExample = exampleSet.examples.find(example => example.category === category);
+            if (selectedExample) break;
+        }
+    }
+    
+    if (selectedExample) {
         // Update the main comparison text
         const comparisonText = `
-            <p>🌳 <strong>${treeCount} trees</strong> absorb about <strong>${totalCO2} kg of CO2</strong> over 30 years</p>
-            <p>That's like <strong>${randomScenario.emoji} ${equivalentAmount} ${randomScenario.unit}</strong> of ${randomScenario.name.toLowerCase()}!</p>
+            <p>${selectedExample.text}</p>
+            <p><em>${selectedExample.detail}</em></p>
         `;
         
         document.getElementById('comparisonText').innerHTML = comparisonText;
     }
-}
-
-function checkAchievements(treeCount) {
-    const achievement = ACHIEVEMENTS.find(a => a.trees === treeCount);
-    
-    if (achievement && treeCount > lastTreeCount) {
-        showAchievement(achievement.text, achievement.emoji);
-        currentAchievement = treeCount;
-    }
-    
-    lastTreeCount = treeCount;
-}
-
-function showAchievement(text, emoji) {
-    const achievementElement = document.getElementById('achievement');
-    const emojiElement = achievementElement.querySelector('.achievement-emoji');
-    const textElement = achievementElement.querySelector('.achievement-text');
-    
-    emojiElement.textContent = emoji;
-    textElement.textContent = text;
-    
-    achievementElement.classList.remove('hidden');
-    
-    // Hide achievement after 3 seconds
-    setTimeout(() => {
-        achievementElement.classList.add('hidden');
-    }, 3000);
 }
 
 function addKeyboardSupport() {
@@ -245,10 +395,18 @@ function addKeyboardSupport() {
 function addHapticFeedback() {
     // Add haptic feedback for mobile devices
     if ('vibrate' in navigator) {
+        const factCards = document.querySelectorAll('.fact-card');
         const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
+        
+        factCards.forEach(card => {
+            card.addEventListener('click', function() {
                 navigator.vibrate(50);
+            });
+        });
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                navigator.vibrate(30);
             });
         });
     }
@@ -274,13 +432,12 @@ function playClickSound() {
 }
 
 function addVisualFeedback(treeCount) {
-    const container = document.querySelector('.calculator-box');
-    
-    // Add a subtle pulse effect
-    container.style.transform = 'scale(1.02)';
+    // Add a subtle animation to the comparison text
+    const comparisonText = document.getElementById('comparisonText');
+    comparisonText.style.transform = 'scale(1.05)';
     setTimeout(() => {
-        container.style.transform = 'scale(1)';
-    }, 150);
+        comparisonText.style.transform = 'scale(1)';
+    }, 200);
     
     // Add particle effect for milestone numbers
     if (treeCount % 10 === 0 && treeCount > 0) {
@@ -289,9 +446,9 @@ function addVisualFeedback(treeCount) {
 }
 
 function createParticleEffect() {
-    const container = document.querySelector('.container');
+    const container = document.querySelector('.calculator-box');
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 8; i++) {
         const particle = document.createElement('div');
         particle.innerHTML = '🌱';
         particle.style.position = 'absolute';
@@ -306,8 +463,8 @@ function createParticleEffect() {
         
         // Animate particle
         setTimeout(() => {
-            const angle = (i / 10) * 2 * Math.PI;
-            const distance = 100 + Math.random() * 50;
+            const angle = (i / 8) * 2 * Math.PI;
+            const distance = 80 + Math.random() * 40;
             const x = Math.cos(angle) * distance;
             const y = Math.sin(angle) * distance;
             
@@ -317,54 +474,9 @@ function createParticleEffect() {
         
         // Remove particle after animation
         setTimeout(() => {
-            container.removeChild(particle);
-        }, 1050);
-    }
-}
-
-// Add smooth scrolling and additional interactive features
-document.addEventListener('DOMContentLoaded', function() {
-    // Add confetti effect for special numbers
-    const input = document.getElementById('treeCount');
-    input.addEventListener('input', function() {
-        const value = parseInt(this.value);
-        if (value === 100 || value === 500 || value === 1000) {
-            createConfettiEffect();
-        }
-    });
-});
-
-function createConfettiEffect() {
-    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'];
-    const container = document.querySelector('.container');
-    
-    for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement('div');
-        confetti.style.position = 'absolute';
-        confetti.style.width = '10px';
-        confetti.style.height = '10px';
-        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.top = '-10px';
-        confetti.style.pointerEvents = 'none';
-        confetti.style.zIndex = '1000';
-        confetti.style.borderRadius = '50%';
-        
-        container.appendChild(confetti);
-        
-        // Animate confetti
-        setTimeout(() => {
-            confetti.style.transition = 'all 3s ease-out';
-            confetti.style.top = '100%';
-            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-            confetti.style.opacity = '0';
-        }, i * 50);
-        
-        // Remove confetti after animation
-        setTimeout(() => {
-            if (container.contains(confetti)) {
-                container.removeChild(confetti);
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
             }
-        }, 3500);
+        }, 1050);
     }
 } 

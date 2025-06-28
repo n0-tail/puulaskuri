@@ -200,42 +200,13 @@ h1 {
 .fact-card .fact-text {
     font-size: 0.9rem;
     font-weight: 600;
+    color: #4a5568;
 }
 
-.achievement-section {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.achievement {
-    background: linear-gradient(135deg, #ffd93d, #ff6b6b);
+.fact-card.active .fact-text {
     color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: 600;
-    animation: bounce 0.6s ease-out;
-    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
 }
 
-@keyframes bounce {
-    0% { transform: scale(0.3); opacity: 0; }
-    50% { transform: scale(1.05); }
-    70% { transform: scale(0.9); }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.achievement-emoji {
-    font-size: 1.2rem;
-    margin-right: 8px;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
     .calculator-box {
         padding: 30px 20px;
@@ -264,25 +235,25 @@ h1 {
     }
 }
 
-/* Smooth transitions for all interactive elements */
+/* Custom scrollbar */
 * {
-    transition: all 0.2s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #4ecdc4 #f7fafc;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f7fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #667eea;
+    background: #4ecdc4;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #5a67d8;
+    background: #44a08d;
 } 
